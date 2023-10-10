@@ -1,0 +1,135 @@
+/*Estilo do body*/
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Helvetica;
+    background-image: linear-gradient(to right, #0F2DD0, #34073D);
+    color: #FFF; 
+    text-align: center;
+    padding-top: 30px;
+  }
+  
+  /* limitar a largura do container e centralizar*/
+  #tasks-container {
+    width: 500px;
+    margin-left: auto;
+    margin-right: auto; 
+  }
+  
+  /*********************************************************
+  
+  /*primeira parte do projeto - tasks form */
+  #tasks-header {
+    margin-top: 40px;
+  }
+  
+  #add-task-form { /*posição absoluta do form-task*/
+    position: relative;
+  }
+  
+  #add-task-form input { /*estilizar o input*/
+    box-sizing: border-box; /*para que o input não ultrasse o limite de 500px */
+    border: 1px solid #00004E;
+    background: #FFF;
+    color: #34073D; 
+    padding: 15px;
+    font-size: 18px;
+    width: 100%;
+  }
+  
+  #add-task-form input::placeholder { /*estilizar o input*/ /*o seletor hover tem :: para mudar */
+    color: #00004E;
+  }
+  
+  
+  #add-task-form input:focus {/*para tirar o input que fica salvo ao usuário inserir novamente*/
+   outline: none;
+  }
+  
+  #add-btn { /**estilizar o icone do input*/
+    position: absolute;
+    background: #FFF;
+    border: 1px solid #00004E;
+    cursor: pointer;
+    transition: .5s;
+    width: 60px;
+    height: 53px;
+    top: 0;
+    right: 0;
+    padding-top: 3px;
+  }
+  
+  #add-btn:hover { /*para deixar o hover do input com animação ao passar o mouse*/
+      background-color: #00004E;
+      color: #FFF;
+  }
+  
+  ion-icon { /*aumentar o tamanho o + do icon do input*/
+    font-size: 25px;
+  }
+  
+  /**********************************************************/
+  /**Segunda parte do projeto - tasks container*/
+  
+  #task-list {/*estiliza a lista*/
+      list-style: none;/**para tirar os bugs na lateral*/
+      padding-left: 0;
+  }
+  
+  #task-list li { /**alterar cada um dos lists*/
+      text-align: left; /*para centralizar*/
+      height: 50px;
+      line-height: 50px;  /*o texto na vertical*/
+      position: relative; /*para ter como ref o ul*/
+      border-bottom: 3px, #00004E;
+      background-color: #FFF;
+      color: #00004E;
+      margin-bottom: 10px; /*para afastar um li do outro*/
+      padding-left: 15px; /* para descolar o texto da ponta do li*/
+      transition: .5s; /*para animação quando o usuario terminar uma tarefa*/
+      font-weight: bold; /*para deixar a fonte em negrito*/
+  }
+  
+  #task-list li span { /*para aumentar um pouco mais a fonte do li (span)*/
+      font-size: 18px;
+  }
+  
+  #task-list ion-icon { /*para posicionar os ícones*/
+      position: absolute; /*para que eles fiquem livremente*/
+      top: 0;
+      height: 40px;
+      transition: .5; /*para o hover mudar a cor de texto*/
+      cursor: pointer; /*para aparecer um botão*/
+      width: 30px;
+      padding: 5px;
+  }
+  
+  .done-btn {/*para posicionar o botão no canto*/
+      right: 40px;
+  }
+  
+  .done-btn:hover { /*efeito de hover para mudar a cor */
+      color:#FFF;
+      background-color: #09E01B;
+  }
+  
+  .remove-btn { /*tbm para posicionar o botão no canto*/
+      right: 0;
+  }
+  
+  .remove-btn:hover { /*efeito de hover para mudar a cor*/
+      color: #FFFF;
+      background-color: #EB0927;
+  
+  }
+  
+  /*etilos para template*/
+  .hide { /*para esconder o template de cada li*/
+      display: none;
+  }
+  
+  #task-list li.done { /*para passar um risco no li como um complete*/
+      background-color: #00004E;
+      color: #FFF;
+      text-decoration: line-through;
+  } 
